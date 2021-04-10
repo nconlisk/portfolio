@@ -1,3 +1,17 @@
+/*This section sets up style variables for reuse throughout the webpage
+allowing us to quickly edit the colour scheme without replacing each colour
+individually */
+
+:root {
+  --main-accent-1: lightskyblue;
+  --main-accent-2: #ffd072;
+  --main-accent-3: #ffffff;
+  --main-text: #ffffff;
+  --main-text-alt: black;
+}
+
+
+
 html {
   /* Setting a base font size of 10px give us easier rem calculations
      Info: 1rem === 10px, 1.5rem === 15px, 2rem === 20px and so forth
@@ -9,11 +23,11 @@ html {
 body {
   
     max-width: 100%;
-    background-color:#303841;
+    background-color: var(--main-accent-2);
     font-size: 2rem;
     line-height: 1.5;
     text-align: center;
-    color: #ffffff;
+    color: var(--main-text);
     margin: auto;
   
 }
@@ -27,10 +41,10 @@ body {
   font-size: 2.25rem;
   overflow: hidden;
   display: flex;
-  background-color: white;
+  background-color: var(--main-accent-3);
   align-items: center;
   margin-bottom: 1rem;
- 
+
   }
 
 .nav-link a{
@@ -44,8 +58,8 @@ body {
   }
 
 .nav-link a:hover {
-  background-color: gray;
-  color: white;
+  background-color: var(--main-accent-1);
+  color: var(--main-text);
 }
 
 nav > ul {
@@ -69,18 +83,17 @@ nav > ul {
     font-size: 3.25rem;
   }
 
+  h3{
+    font-size: 2rem;
+  }
+
 .welcome{
   /*padding-bottom: 15rem;*/
   height: 100vh;
-  background: gray;
+  background: var(--main-accent-1);
 }
 .welcome p{
   font-style: italic;
-}
-
-
-#projects{
-  text-decoration: underline;
 }
  
 .btn {
@@ -88,64 +101,71 @@ nav > ul {
   padding: 1rem 2rem;
   border-radius: 2rem;
   text-decoration: none;
-  color: white;
-  background-color: gray;
+  color: var(--main-text);
+  background-color: var(--main-accent-1);
   
 }
 
-.contact-details:hover {
-  transform: translateY(0.8rem);
-  color: blue;
-}
-
-footer{
-  bottom: 0;
-  padding-top: 10rem;
-  width: 100%;
-  
-}
-
-footer p{
-  color: gray;
-  text-align: right;
-  padding-top: 1rem;
-  padding-right: 2rem;
-  background: white;
-  height: 100%;
-}
-
-img {
+.projects-image {
   display: block;
-  width: 100%;
+  width: 250px;
+  height: 250px;
+  border-radius: 125px;
+  /*border: 2px solid blue;*/
 }
 
 .projects-section {
   text-align: center;
   padding: 10rem 2rem;
+  
+  
 }
 
-.projects-section-header {
+.project-top{
+  border: 5px solid var(--main-accent-1);
+  border-radius: 5px;
+  max-width: 50%;
+}
+
+.project-section-header {
   max-width: 640px;
   margin: 0 auto 6rem auto;
+  
 }
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  grid-gap: 4rem;
-  width: 100%;
-  max-width: 1280px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3rem;
+  width: 80%;
   margin: 0 auto;
   margin-bottom: 6rem;
+  padding-top: 2rem;
+  /*border: 2px solid yellow;*/
 }
 
-.project {
-  background: var(--main-gray);
-  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-  border-radius: 2px;
+.project-tile {
+  padding: 10px 10px 10px 10px;
+  width: 250px;
+  height: 450px;
+  background: var(--main-accent-3);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  border-radius:15px;
+  /*border: 2px solid green;*/
 }
 
+.project-tile{
+  color: var(--main-text-alt);
+}
 
+.project-tile li{
+  text-align: left;
+}
+
+.project-tile-line{
+  border: 2.5px solid var(--main-accent-1);
+  border-radius: 2.5px;
+}
 
 
   @media (max-width: 800px) {
@@ -159,3 +179,25 @@ img {
         font-size: 2.75rem;
     }
 }
+
+
+.contact-details:hover {
+  transform: translateY(0.8rem);
+  color: var(--main-accent-2);
+}
+
+footer{
+  bottom: 0;
+  padding-top: 10rem;
+  width: 100%;
+  
+}
+
+footer p{
+  color: var(--main-text);
+  text-align: right;
+  padding-top: 1rem;
+  padding-right: 2rem;
+  height: 100%;
+}
+
